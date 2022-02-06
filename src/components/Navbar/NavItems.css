@@ -1,0 +1,48 @@
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+.links,
+.links-hidden {
+    padding: 1em;
+    border: 2px solid turquoise;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.links-hidden {
+    display: inline-block;
+}
+
+.links:hover {
+    background-color: pink;
+    color: red;
+}
+
+.links-hidden:hover {
+    background-color: coral;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-list {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    margin-top: 1em;
+}
+
+
+.dropdown:hover .dropdown-list{
+    display: block;
+}
+
+.dropdown:hover .dropdown-btn {
+    background-color: pink;
+}

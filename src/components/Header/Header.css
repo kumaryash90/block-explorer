@@ -1,0 +1,13 @@
+.header {
+    background-color: grey;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2:hover {
+    cursor: pointer;
+}
