@@ -27,26 +27,28 @@ const Home = () => {
     return (
         <>
             <HeaderPrimary />
-            <Search />
-            <div>
-                <h3>latest txns: </h3>
-                {latestTxns.map(txn => {
-                    return <p>
-                            <Link to={`/${network}/tx/${txn}`} target="_blank" rel="noopener noreferrer">
-                                {txn}
-                            </Link></p>
-                })}
-            </div>
+            <div class="container">
+                <Search />
+                <div>
+                    <h3>latest txns: </h3>
+                    {latestTxns.map(txn => {
+                        return <p>
+                                <Link to={`/${network}/tx/${txn}`} target="_blank" rel="noopener noreferrer">
+                                    {txn}
+                                </Link></p>
+                    })}
+                </div>
 
-            <div>
-                <h3>latest blocks: </h3>
-                {latestBlocks.map(block => {
-                    return  <p>
-                                <Link to={`/${network}/block/${block.number}`} target="_blank" rel="noopener noreferrer">
-                                    {block.number}---{block.miner}---{block.txnCount}
-                                </Link>
-                            </p>
-                })}
+                <div>
+                    <h3>latest blocks: </h3>
+                    {latestBlocks.map(block => {
+                        return  <p>
+                                    <Link to={`/${network}/block/${block.number}`} target="_blank" rel="noopener noreferrer">
+                                        {block.number}---{block.miner}---{block.txnCount}
+                                    </Link>
+                                </p>
+                    })}
+                </div>
             </div>
         </>
     );

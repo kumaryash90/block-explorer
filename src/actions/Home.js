@@ -34,7 +34,7 @@ export const getLatestBlocks = async (key, count) => {
                   false  // retrieve the full transaction object in transactions array
                 ]
               });
-            console.log(res.data.result.hash);
+            console.log(res.data.result.miner);
             latestBlocks.push({
                 number: parseInt(res.data.result.number),
                 miner: res.data.result.miner,

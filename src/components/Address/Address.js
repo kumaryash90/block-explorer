@@ -21,9 +21,11 @@ const Address = () => {
     return (
         <>
             <HeaderSecondary />
-            <p>type: {addressDetails.type}</p>
-            <p>balance: {addressDetails.balance}</p>
-            <p>transaction count: {addressDetails.txnCount}</p>
+            <div class="container">
+                <p>type: {addressDetails.type}</p>
+                <p>balance: {addressDetails.balance}</p>
+                <p>transaction count: {addressDetails.txnCount}</p>
+            </div>
         </>
     );
 }

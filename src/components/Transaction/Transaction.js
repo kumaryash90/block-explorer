@@ -22,11 +22,13 @@ const Transaction = () => {
     return (
         <>
             <HeaderSecondary />
-            <p>this is transaction: {txnDetails.hash}</p>
-            <p>Block number: {txnDetails.blockNumber}</p>
-            <p>from: {txnDetails.from}</p>
-            <p>to: {txnDetails.to}</p>
-            <p>value: {txnDetails.value}</p>
+            <div class="container">
+                <p>this is transaction: {txnDetails.hash}</p>
+                <p>Block number: {txnDetails.blockNumber}</p>
+                <p>from: {txnDetails.from}</p>
+                <p>to: {txnDetails.to}</p>
+                <p>value: {txnDetails.value}</p>
+            </div>
         </>
     );
 }

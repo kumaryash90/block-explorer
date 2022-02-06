@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { NetworkContext } from "../../NetworkContext";
+import "./Search.css";
 
 const Search = () => {
     const { network, key } = useContext(NetworkContext);
@@ -37,10 +38,15 @@ const Search = () => {
     }
 
     return (
-        <>
-            <input type="text" className="search" value={input} onChange={handleInput} onKeyDown={handleKeyDown} />
+        <div className="search-div">
+            <input type="text" 
+                    className="search-bar" 
+                    value={input} 
+                    onChange={handleInput} 
+                    onKeyDown={handleKeyDown} 
+                    placeholder="Search by Address / Txn Hash / Block" />
             <button className="search-btn" onClick={handleSubmit}>Go</button>
-        </>
+        </div>
     );
 }
 

@@ -22,11 +22,13 @@ const Block = () => {
     return (
         <>
             <HeaderSecondary />
-            <p>this is block: {blockDetails.blockNumber}</p>
-            <p>Block hash: {blockDetails.hash}</p>
-            <p>mined by: {blockDetails.miner}</p>
-            <p>timestamp: {blockDetails.timestamp}</p>
-            <p>total transactions: {blockDetails.txnCount}</p>
+            <div class="container">
+                <p>this is block: {blockDetails.blockNumber}</p>
+                <p>Block hash: {blockDetails.hash}</p>
+                <p>mined by: {blockDetails.miner}</p>
+                <p>timestamp: {blockDetails.timestamp}</p>
+                <p>total transactions: {blockDetails.txnCount}</p>
+            </div>
         </>
     );
 }

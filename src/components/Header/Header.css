@@ -11,3 +11,10 @@
 .logo h2:hover {
     cursor: pointer;
 }
+
+.nav {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}

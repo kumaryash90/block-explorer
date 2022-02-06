@@ -10,5 +10,5 @@ h1, h2, p {
 .container {
     width: 90%;
     border: 2px solid red;
-    margin: 0 auto;
+    margin: 0 auto 1em auto;
 }
