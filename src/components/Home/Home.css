@@ -3,16 +3,18 @@
     flex-direction: column;
     margin: 0 auto;
     align-items: center;
+    height: 800px;
 }
 
 .main-home-txns,
 .main-home-blocks {
     background-color: #121212;
     margin: 2em 0;
-    width: 60%;
+    width: 65%;
     text-align: center;
     color: #fff;
     border-radius: 8px;
+    padding: 0 2em;
 }
 
 .main-home-txns a,
@@ -25,4 +27,16 @@
 .main-home-blocks a:hover {
     text-decoration: none;
     color: #fff;
+}
+
+.main-home-txns .txns-para,
+.main-home-blocks .blocks-para {
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.157);
+    transition: 0.3s;
+}
+
+.main-home-txns .txns-para:hover,
+.main-home-blocks .blocks-para:hover {
+    transform: scale(1.02);
 }

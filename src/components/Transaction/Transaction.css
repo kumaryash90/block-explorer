@@ -3,6 +3,7 @@
     flex-direction: column;
     margin: 0 auto;
     align-items: center;
+    height: 650px;
 }
 
 .main-secondary-content {
@@ -23,4 +24,9 @@
 .main-secondary-content a:hover {
     text-decoration: none;
     color: #fff;
+}
+
+.main-secondary-content .secondary-item {
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.157);
 }

@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getBlockByNumber } from '../../actions/Block';
 import { NetworkContext } from '../../NetworkContext';
+import Footer from '../Footer/Footer';
 import HeaderSecondary from '../Header/HeaderSecondary';
 import Search from '../Search/Search';
 import "./Block.css"
@@ -27,13 +28,16 @@ const Block = () => {
             <div class="container main-secondary">
                 <Search />
                 <div class="main-secondary-content">
-                    <p>this is block: {blockDetails.blockNumber}</p>
-                    <p>Block hash: {blockDetails.hash}</p>
-                    <p>mined by: {blockDetails.miner}</p>
-                    <p>timestamp: {blockDetails.timestamp}</p>
-                    <p>total transactions: {blockDetails.txnCount}</p>
+                    <p className='secondary-item'>block number:&nbsp;&nbsp;&nbsp;{blockDetails.blockNumber}</p>
+                    <p className='secondary-item'>block hash:&nbsp;&nbsp;&nbsp;{blockDetails.hash}</p>
+                    <p className='secondary-item'>mined by:&nbsp;&nbsp;&nbsp;
+                        <Link to={`/${network}/address/${blockDetails.miner}`} target="_blank" rel="noopener noreferrer">{blockDetails.miner}</Link>
+                    </p>
+                    <p className='secondary-item'>timestamp:&nbsp;&nbsp;&nbsp;{blockDetails.timestamp}</p>
+                    <p className='secondary-item'>total transactions:&nbsp;&nbsp;&nbsp;{blockDetails.txnCount}</p>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

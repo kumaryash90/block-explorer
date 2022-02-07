@@ -7,10 +7,11 @@
 
 .search-bar {
     font-size: 1.5rem;
-    width: 85%;
+    width: 80%;
     text-align: center;
     background-color: #12121249;
     border: 0.1px solid rgba(238, 238, 238, 0.233);
+    border-radius: 8px;
     padding: 0.5em;
     color: #eee;
 }
@@ -20,6 +21,7 @@
     width: 15%;
     background-color: #bb86fc;
     border: 0.1px solid #bb86fc;
+    border-radius: 8px;
 }
 
 .search-btn:hover {

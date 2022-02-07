@@ -30,7 +30,8 @@ export const getAddressDetails = async (key, address) => {
             ]
           });
         const addressDetails = {
-            type: codeRes.data.result ? "Contract" : "EOA",
+            address: address,
+            type: codeRes.data.result.length > 2 ? "Contract" : "EOA",
             balance: parseInt(balanceRes.data.result)/(10 ** 18),
             txnCount: parseInt(txnRes.data.result)
         }

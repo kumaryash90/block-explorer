@@ -19,6 +19,7 @@ const HeaderPrimary = () => {
                 <div className="navbar">
                     <div className="logo">
                         <h2 onClick={handleLogoClick}>Block Explorer</h2>
+                        <p>({network})</p>
                     </div>
                     <div className="nav">
                         <NavItems />

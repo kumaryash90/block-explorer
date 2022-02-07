@@ -6,6 +6,7 @@ import HeaderPrimary from '../Header/HeaderPrimary';
 import Search from '../Search/Search';
 import { getLatestTxns, getLatestBlocks } from '../../actions/Home';
 import "./Home.css";
+import Footer from '../Footer/Footer';
 
 const Home = () => {
     const { network, key } = useContext(NetworkContext);
@@ -33,24 +34,45 @@ const Home = () => {
                 <div className="main-home-txns">
                     <h3>latest txns: </h3>
                     {latestTxns.map(txn => {
-                        return <p>
-                                <Link to={`/${network}/tx/${txn}`} target="_blank" rel="noopener noreferrer">
-                                    {txn}
-                                </Link></p>
+                        return <p className='txns-para'>
+                                Transaction Hash:&nbsp;
+                                <Link to={`/${network}/tx/${txn.hash}`} target="_blank" rel="noopener noreferrer">
+                                    {txn.hash.substr(0,30)}...
+                                </Link>
+                                &nbsp;&nbsp;
+                                <span>
+                                    Value: {txn.value}&nbsp;eth
+                                </span>
+                                </p>
                     })}
                 </div>
 
                 <div className='main-home-blocks'>
                     <h3>latest blocks: </h3>
                     {latestBlocks.map(block => {
-                        return  <p>
-                                    <Link to={`/${network}/block/${block.number}`} target="_blank" rel="noopener noreferrer">
-                                        {block.number}---{block.miner}---{block.txnCount}
-                                    </Link>
+                        return  <p className='blocks-para'>
+                                    <span>
+                                    Block Number:&nbsp;
+                                        <Link to={`/${network}/block/${block.number}`} target="_blank" rel="noopener noreferrer">
+                                            {block.number}&nbsp;
+                                        </Link>
+                                         &nbsp;&nbsp;&nbsp;
+                                    </span>
+                                    <span>
+                                        Mined By:&nbsp;
+                                        <Link to={`/${network}/address/${block.miner}`} target="_blank" rel="noopener noreferrer">
+                                            {block.miner.substr(0, 12)}...&nbsp;
+                                        </Link>
+                                        &nbsp;&nbsp;&nbsp;
+                                    </span> 
+                                    <span>
+                                        Txn Count:&nbsp; {block.txnCount}
+                                    </span>
                                 </p>
                     })}
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

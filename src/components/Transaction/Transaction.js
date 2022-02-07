@@ -1,11 +1,12 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import { NetworkContext } from '../../NetworkContext';
 import HeaderSecondary from '../Header/HeaderSecondary';
 import { getTxnByHash } from '../../actions/Transaction';
 import Search from '../Search/Search';
 import "./Transaction.css";
+import Footer from '../Footer/Footer';
 
 const Transaction = () => {
     const { network, key } = useContext(NetworkContext);
@@ -27,13 +28,27 @@ const Transaction = () => {
             <div class="container main-secondary">
                 <Search />
                 <div class="main-secondary-content">
-                    <p>this is transaction: {txnDetails.hash}</p>
-                    <p>Block number: {txnDetails.blockNumber}</p>
-                    <p>from: {txnDetails.from}</p>
-                    <p>to: {txnDetails.to}</p>
-                    <p>value: {txnDetails.value}</p>
+                    <p className='secondary-item'>transaction hash:&nbsp;&nbsp;&nbsp;{txnDetails.hash}</p>
+                    <p className='secondary-item'>
+                        block number:&nbsp;&nbsp;&nbsp;
+                        <Link to={`/${network}/block/${txnDetails.blockNumber}`} target="_blank" rel="noopener noreferrer">
+                            {txnDetails.blockNumber}
+                        </Link> 
+                    </p>
+                    <p className='secondary-item'>from:&nbsp;&nbsp;&nbsp;
+                        <Link to={`/${network}/address/${txnDetails.from}`} target="_blank" rel="noopener noreferrer">
+                            {txnDetails.from}
+                        </Link> 
+                    </p>
+                    <p className='secondary-item'>to:&nbsp;&nbsp;&nbsp;
+                        <Link to={`/${network}/address/${txnDetails.to}`} target="_blank" rel="noopener noreferrer">
+                            {txnDetails.to}
+                        </Link> 
+                    </p>
+                    <p className='secondary-item'>value: {txnDetails.value}</p>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getAddressDetails } from '../../actions/Address';
 import { NetworkContext } from '../../NetworkContext';
+import Footer from '../Footer/Footer';
 import HeaderSecondary from '../Header/HeaderSecondary';
 import Search from '../Search/Search';
 import "./Address.css"
@@ -26,11 +27,13 @@ const Address = () => {
             <div class="container main-secondary">
                 <Search />
                 <div class="main-secondary-content">
-                    <p>type: {addressDetails.type}</p>
-                    <p>balance: {addressDetails.balance}</p>
-                    <p>transaction count: {addressDetails.txnCount}</p>
+                    <p className='secondary-item'>account address:&nbsp;&nbsp;&nbsp;{addressDetails.address}</p>
+                    <p className='secondary-item'>account type:&nbsp;&nbsp;&nbsp;{addressDetails.type}</p>
+                    <p className='secondary-item'>balance:&nbsp;&nbsp;&nbsp;{addressDetails.balance}&nbsp;eth</p>
+                    <p className='secondary-item'>transaction count:&nbsp;&nbsp;&nbsp;{addressDetails.txnCount}</p>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }
