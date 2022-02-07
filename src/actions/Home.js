@@ -22,7 +22,8 @@ export const getLatestTxns = async (key, count) => {
         });
         return txns;
     } catch (error) {
-        console.log("some error, but key is: ", key);
+        // console.log("some error, but key is: ", key);
+        alert("something went wrong..");
     }
 }
 
@@ -51,6 +52,7 @@ export const getLatestBlocks = async (key, count) => {
         }
         return latestBlocks;
     } catch (error) {
-        console.log("some error, but key is: ", key);
+        // console.log("some error, but key is: ", key);
+        alert("something went wrong..");
     }
 }

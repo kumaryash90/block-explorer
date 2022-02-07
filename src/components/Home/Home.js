@@ -31,9 +31,11 @@ const Home = () => {
             <HeaderPrimary />
             <div className="container main-home">
                 <Search />
+            
                 <div className="main-home-txns">
                     <h3>latest txns: </h3>
-                    {latestTxns.map(txn => {
+                {!latestTxns.length ? <p>Loading...</p> :
+                    latestTxns.map(txn => {
                         return <p className='txns-para'>
                                 Transaction Hash:&nbsp;
                                 <Link to={`/${network}/tx/${txn.hash}`} target="_blank" rel="noopener noreferrer">
@@ -44,12 +46,14 @@ const Home = () => {
                                     Value: {txn.value}&nbsp;eth
                                 </span>
                                 </p>
-                    })}
-                </div>
+                    })
+                }
+                </div> 
 
                 <div className='main-home-blocks'>
                     <h3>latest blocks: </h3>
-                    {latestBlocks.map(block => {
+                {!latestBlocks.length ? <p>Loading...</p> :
+                    latestBlocks.map(block => {
                         return  <p className='blocks-para'>
                                     <span>
                                     Block Number:&nbsp;

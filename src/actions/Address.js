@@ -38,6 +38,7 @@ export const getAddressDetails = async (key, address) => {
         //console.log("latest txns: ", latestTxns);
         return addressDetails;
     } catch (error) {
-        console.log("some error in address action, but key is: ", key);
+        // console.log("some error in address action, but key is: ", key);
+        alert("something went wrong..");
     }
 }

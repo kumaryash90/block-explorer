@@ -18,6 +18,8 @@ const Search = () => {
         } else if(parseInt(input)) {
             navigate(`/${network}/block/${input}`, { replace: true });
             window.location.reload(true);
+        } else {
+            alert("invalid input");
         }
         console.log(input);
         setInput("");

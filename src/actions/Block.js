@@ -23,6 +23,7 @@ export const getBlockByNumber = async (key, blockNum) => {
         //console.log("latest txns: ", latestTxns);
         return blockDetails;
     } catch (error) {
-        console.log("some error in block action, but key is: ", key);
+        // console.log("some error in block action, but key is: ", key);
+        alert("something went wrong..");
     }
 }

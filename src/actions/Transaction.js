@@ -21,6 +21,7 @@ export const getTxnByHash = async (key, hash) => {
         //console.log("latest txns: ", latestTxns);
         return txnDetails;
     } catch (error) {
-        console.log("some error in txn action, but key is: ", key);
+        // console.log("some error in txn action, but key is: ", key);
+        alert("something went wrong..");
     }
 }
