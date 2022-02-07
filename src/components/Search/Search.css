@@ -1,17 +1,30 @@
 .search-div {
-    padding: 1em;
+    padding: 1em 0;
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    width: 60%;
 }
 
 .search-bar {
     font-size: 1.5rem;
-    width: 90%;
+    width: 85%;
     text-align: center;
+    background-color: #12121249;
+    border: 0.1px solid rgba(238, 238, 238, 0.233);
+    padding: 0.5em;
+    color: #eee;
 }
 
 .search-btn {
     font-size: 1.5rem;
-    width: 10%;
+    width: 15%;
+    background-color: #bb86fc;
+    border: 0.1px solid #bb86fc;
+}
+
+.search-btn:hover {
+    background-color: rgba(238, 238, 238, 0.233);
+    border: 0.1px solid rgba(238, 238, 238, 0.233);
+    color: #eee;
+    cursor: pointer;
 }

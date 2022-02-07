@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { NetworkContext } from '../../NetworkContext';
 import HeaderSecondary from '../Header/HeaderSecondary';
 import { getTxnByHash } from '../../actions/Transaction';
+import Search from '../Search/Search';
+import "./Transaction.css";
 
 const Transaction = () => {
     const { network, key } = useContext(NetworkContext);
@@ -22,12 +24,15 @@ const Transaction = () => {
     return (
         <>
             <HeaderSecondary />
-            <div class="container">
-                <p>this is transaction: {txnDetails.hash}</p>
-                <p>Block number: {txnDetails.blockNumber}</p>
-                <p>from: {txnDetails.from}</p>
-                <p>to: {txnDetails.to}</p>
-                <p>value: {txnDetails.value}</p>
+            <div class="container main-secondary">
+                <Search />
+                <div class="main-secondary-content">
+                    <p>this is transaction: {txnDetails.hash}</p>
+                    <p>Block number: {txnDetails.blockNumber}</p>
+                    <p>from: {txnDetails.from}</p>
+                    <p>to: {txnDetails.to}</p>
+                    <p>value: {txnDetails.value}</p>
+                </div>
             </div>
         </>
     );

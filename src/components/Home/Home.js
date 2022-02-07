@@ -5,6 +5,7 @@ import { NetworkContext } from '../../NetworkContext';
 import HeaderPrimary from '../Header/HeaderPrimary';
 import Search from '../Search/Search';
 import { getLatestTxns, getLatestBlocks } from '../../actions/Home';
+import "./Home.css";
 
 const Home = () => {
     const { network, key } = useContext(NetworkContext);
@@ -27,9 +28,9 @@ const Home = () => {
     return (
         <>
             <HeaderPrimary />
-            <div class="container">
+            <div className="container main-home">
                 <Search />
-                <div>
+                <div className="main-home-txns">
                     <h3>latest txns: </h3>
                     {latestTxns.map(txn => {
                         return <p>
@@ -39,7 +40,7 @@ const Home = () => {
                     })}
                 </div>
 
-                <div>
+                <div className='main-home-blocks'>
                     <h3>latest blocks: </h3>
                     {latestBlocks.map(block => {
                         return  <p>

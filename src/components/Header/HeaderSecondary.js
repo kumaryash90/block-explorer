@@ -22,7 +22,7 @@ const HeaderSecondary = () => {
                         <h2 onClick={handleLogoClick}>Block Explorer</h2>
                     </div>
                     <div className="nav">
-                        <Search />
+                        
                         <NavItems />
                     </div>
                 </div>

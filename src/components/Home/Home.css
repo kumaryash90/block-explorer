@@ -1,0 +1,28 @@
+.main-home {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.main-home-txns,
+.main-home-blocks {
+    background-color: #121212;
+    margin: 2em 0;
+    width: 60%;
+    text-align: center;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.main-home-txns a,
+.main-home-blocks a {
+    text-decoration: none;
+    color: #bb86fc;
+}
+
+.main-home-txns a:hover,
+.main-home-blocks a:hover {
+    text-decoration: none;
+    color: #fff;
+}

@@ -1,11 +1,20 @@
 .header {
-    background-color: grey;
+    background-color: #121212d8;
+    color: #fff;
+    
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.logo h2{
+    font-size: 2rem;
+    margin-bottom: 0;
+    color: #bb86fc;
+    padding: 0.7em 0;
 }
 
 .logo h2:hover {

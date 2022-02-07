@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { getBlockByNumber } from '../../actions/Block';
 import { NetworkContext } from '../../NetworkContext';
 import HeaderSecondary from '../Header/HeaderSecondary';
+import Search from '../Search/Search';
+import "./Block.css"
 
 const Block = () => {
     const { network, key } = useContext(NetworkContext);
@@ -22,12 +24,15 @@ const Block = () => {
     return (
         <>
             <HeaderSecondary />
-            <div class="container">
-                <p>this is block: {blockDetails.blockNumber}</p>
-                <p>Block hash: {blockDetails.hash}</p>
-                <p>mined by: {blockDetails.miner}</p>
-                <p>timestamp: {blockDetails.timestamp}</p>
-                <p>total transactions: {blockDetails.txnCount}</p>
+            <div class="container main-secondary">
+                <Search />
+                <div class="main-secondary-content">
+                    <p>this is block: {blockDetails.blockNumber}</p>
+                    <p>Block hash: {blockDetails.hash}</p>
+                    <p>mined by: {blockDetails.miner}</p>
+                    <p>timestamp: {blockDetails.timestamp}</p>
+                    <p>total transactions: {blockDetails.txnCount}</p>
+                </div>
             </div>
         </>
     );
